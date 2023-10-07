@@ -1,46 +1,11 @@
 <!DOCTYPE html>
-<!-- This site was created in Webflow. https://www.webflow.com --><!-- Last Published: Wed Sep 13 2023 05:59:01 GMT+0000 (Coordinated Universal Time) -->
-<html
-  data-wf-domain="weconsult.webflow.io"
-  data-wf-page="64ca33761d0deacae9d56b73"
-  data-wf-site="64ca211f22062fd3870f5523"
->
-  <!-- Mirrored from weconsult.webflow.io/careers by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 30 Sep 2023 12:41:54 GMT -->
+
+<html>
+  
   <head>
     <meta charset="utf-8" />
     <title>SKYLIGHT INFOTECH</title>
-    <meta
-      content="WeConsult is a multi-layout premium Webflow template focused on consulting agencies. With a clean CMS structure and world-class design, WeConsult has everything you need to get your website off the ground."
-      name="description"
-    />
-    <meta
-      content="Careers | WeConsult - Webflow Ecommerce website template"
-      property="og:title"
-    />
-    <meta
-      content="WeConsult is a multi-layout premium Webflow template focused on consulting agencies. With a clean CMS structure and world-class design, WeConsult has everything you need to get your website off the ground."
-      property="og:description"
-    />
-    <meta
-      content="https://assets.website-files.com/64ca211f22062fd3870f5523/64cdd7563a5c03dcf2e98699_OG.jpg"
-      property="og:image"
-    />
-    <meta
-      content="Careers | WeConsult - Webflow Ecommerce website template"
-      property="twitter:title"
-    />
-    <meta
-      content="WeConsult is a multi-layout premium Webflow template focused on consulting agencies. With a clean CMS structure and world-class design, WeConsult has everything you need to get your website off the ground."
-      property="twitter:description"
-    />
-    <meta
-      content="https://assets.website-files.com/64ca211f22062fd3870f5523/64cdd7563a5c03dcf2e98699_OG.jpg"
-      property="twitter:image"
-    />
-    <meta property="og:type" content="website" />
-    <meta content="summary_large_image" name="twitter:card" />
-    <meta content="width=device-width, initial-scale=1" name="viewport" />
-    <meta content="Webflow" name="generator" />
+    
     <link
       href="../assets.website-files.com/64ca211f22062fd3870f5523/css/weconsult.webflow.228fd21b7.css"
       rel="stylesheet"
@@ -65,6 +30,68 @@
       href="../assets.website-files.com/64ca211f22062fd3870f5523/64cef35bb8a6b3413bf1a4e8_256.png"
       rel="apple-touch-icon"
     />
+
+    <script>
+      // Function to create a div element based on the object data
+      function createListItem(item) {
+        var div = document.createElement("div");
+        div.setAttribute("role", "listitem");
+        div.setAttribute("class", "w-dyn-item");
+    
+        var a = document.createElement("a");
+        a.setAttribute("href", `jobDescription.html?value=${item.id}`);
+        a.setAttribute("class", "tile-elevation-light-two career-tile w-inline-block");
+    
+        var topCareerDiv = document.createElement("div");
+        topCareerDiv.setAttribute("class", "top-career");
+    
+        var textHeading = document.createElement("div");
+        textHeading.setAttribute("class", "text-heading-3");
+        textHeading.textContent = item.title;
+    
+        var paragraphSmall = document.createElement("div");
+        paragraphSmall.setAttribute("class", "paragraph-small");
+        paragraphSmall.textContent = item.location;
+
+    
+    
+        topCareerDiv.appendChild(textHeading);
+        topCareerDiv.appendChild(paragraphSmall);
+       
+    
+        var descriptionDiv = document.createElement("div");
+        descriptionDiv.textContent = item.short_description;
+    
+        a.appendChild(topCareerDiv);
+        a.appendChild(descriptionDiv);
+    
+        div.appendChild(a);
+    
+        return div;
+      }
+    
+      // Fetch data and create list items based on the response
+      fetch('https://script.google.com/macros/s/AKfycbz-ndxgLazkB2ilzt9Ae02w5CR-JeW92LyOTbIOOFgYYsLOEQQSmgHkFw5BOHQetTcy/exec', {
+        method: "GET",
+      })
+      .then(res => res.json())  
+      .then(data => {
+        
+    
+        // Create list items based on the fetched data
+        var container = document.querySelector('.w-dyn-items');  // Assuming you have a container to hold the list items
+        data.reverse().forEach(function(item) {
+          var listItem = createListItem(item);
+          container.appendChild(listItem);
+        });
+      })
+      .catch(error => console.error('Error fetching data:', error));
+    </script>
+    
+    
+
+
+
     <script type="text/javascript">
       window.__WEBFLOW_CURRENCY_SETTINGS = {
         currencyCode: "USD",
@@ -169,21 +196,7 @@
         </div>
       </div>
     </div>
-    <!-- <section class="section hero-careers">
-      <div class="w-layout-blockcontainer main-container w-container">
-        <div class="title-wrap-careers">
-          <h1
-            data-w-id="2cd6861e-3af2-153b-f8d2-d7cdbc8801d1"
-            style="opacity: 0"
-          >
-            Let’s work together
-          </h1>
-          
-        </div>
-
-      </div>
-      
-    </section> -->
+   
  
     <section class="section sticky-positions-section">
       <div id="openings" class="master-sticky-positions">
@@ -199,112 +212,9 @@
              
               <div class="list-wrap-careers w-dyn-list">
                 <div role="list" class="grid-careers-thirds w-dyn-items">
-                  <div role="listitem" class="w-dyn-item">
-                    <a
-                      href="contact/contact-b.html"
-                      class="tile-elevation-light-two career-tile w-inline-block"
-                      ><div class="top-career">
-                        <div class="text-heading-3">Project manager</div>
-                        <div class="paragraph-small">
-                          Amsterdam, The Netherlands
-                        </div>
-                      </div>
-                      
-                      <div>
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                        Duis convallis nibh a lectus viverra ullamcorper. Nunc
-                        id congue tortor.
-                      </div></a
-                    >
-                  </div>
-                  <div role="listitem" class="w-dyn-item">
-                    <a
-                      href="contact/contact-b.html"
-                      class="tile-elevation-light-two career-tile w-inline-block"
-                      ><div class="top-career">
-                        <div class="text-heading-3">Product Manager</div>
-                        <div class="paragraph-small">
-                          Amsterdam, The Netherlands
-                        </div>
-                      </div>
-                      <div>
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                        Duis convallis nibh a lectus viverra ullamcorper. Nunc
-                        id congue tortor.
-                      </div></a
-                    >
-                  </div>
+                  
 
-                  <div role="listitem" class="w-dyn-item">
-                    <a
-                      href="contact/contact-b.html"
-                      class="tile-elevation-light-two career-tile w-inline-block"
-                      ><div class="top-career">
-                        <div class="text-heading-3">Product Manager</div>
-                        <div class="paragraph-small">
-                          Amsterdam, The Netherlands
-                        </div>
-                      </div>
-                      <div>
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                        Duis convallis nibh a lectus viverra ullamcorper. Nunc
-                        id congue tortor.
-                      </div></a
-                    >
-                  </div>
-
-                  <div role="listitem" class="w-dyn-item">
-                    <a
-                      href="contact/contact-b.html"
-                      class="tile-elevation-light-two career-tile w-inline-block"
-                      ><div class="top-career">
-                        <div class="text-heading-3">Product Manager</div>
-                        <div class="paragraph-small">
-                          Amsterdam, The Netherlands
-                        </div>
-                      </div>
-                      <div>
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                        Duis convallis nibh a lectus viverra ullamcorper. Nunc
-                        id congue tortor.
-                      </div></a
-                    >
-                  </div>
-
-                  <div role="listitem" class="w-dyn-item">
-                    <a
-                      href="contact/contact-b.html"
-                      class="tile-elevation-light-two career-tile w-inline-block"
-                      ><div class="top-career">
-                        <div class="text-heading-3">Product Manager</div>
-                        <div class="paragraph-small">
-                          Amsterdam, The Netherlands
-                        </div>
-                      </div>
-                      <div>
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                        Duis convallis nibh a lectus viverra ullamcorper. Nunc
-                        id congue tortor.
-                      </div></a
-                    >
-                  </div>
-
-                  <div role="listitem" class="w-dyn-item">
-                    <a
-                      href="contact/contact-b.html"
-                      class="tile-elevation-light-two career-tile w-inline-block"
-                      ><div class="top-career">
-                        <div class="text-heading-3">Product Manager</div>
-                        <div class="paragraph-small">
-                          Amsterdam, The Netherlands
-                        </div>
-                      </div>
-                      <div>
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                        Duis convallis nibh a lectus viverra ullamcorper. Nunc
-                        id congue tortor.
-                      </div></a
-                    >
+                  
                   </div>
                 </div>
               </div>
@@ -420,6 +330,8 @@
       src="../assets.website-files.com/64ca211f22062fd3870f5523/js/webflow.b453d442d.js"
       type="text/javascript"
     ></script>
+
+   
   </body>
-  <!-- Mirrored from weconsult.webflow.io/careers by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 30 Sep 2023 12:41:56 GMT -->
+ 
 </html>

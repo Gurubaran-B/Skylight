@@ -10,33 +10,72 @@
     <meta charset="utf-8" />
     <title>SKYLIGHT INFOTECH</title>
     
-    <meta
-      content="SKYLIGHT INFOTECH"
-      property="og:title"
-    />
     
-    <meta
-      content="https://assets.website-files.com/64ca211f22062fd3870f5523/64cdd7563a5c03dcf2e98699_OG.jpg"
-      property="og:image"
-    />
-    <meta
-      content="SKYLIGHT INFOTECH"
-      property="twitter:title"
-    />
-   
-    <meta
-      content="https://assets.website-files.com/64ca211f22062fd3870f5523/64cdd7563a5c03dcf2e98699_OG.jpg"
-      property="twitter:image"
-    />
-    <meta property="og:type" content="website" />
-    <meta content="summary_large_image" name="twitter:card" />
     <meta content="width=device-width, initial-scale=1" name="viewport" />
-    <meta content="Webflow" name="generator" />
+    
     <link
       href="../../assets.website-files.com/64ca211f22062fd3870f5523/css/weconsult.webflow.228fd21b7.css"
       rel="stylesheet"
       type="text/css"
     />
+
+    <script>
+      // Function to create a div element based on the object data
+      function createListItem(item, index) {
+    var div = document.createElement("div");
+    div.setAttribute("class", "single-process-center");
+
+    var leftDiv = document.createElement("div");
+    leftDiv.setAttribute("class", "left-process-center");
+    var textNumber = document.createElement("div");
+    textNumber.setAttribute("class", "text-number-process-center");
+    textNumber.textContent = index + 1;
+    leftDiv.appendChild(textNumber);
+
+    var rightDiv = document.createElement("div");
+    rightDiv.setAttribute("class", "right-process-center");
+    var h3 = document.createElement("h3");
+    h3.setAttribute("class", "no-margins");
+    h3.innerHTML = `${item.title} <span class="pd-custom"> ${item.experience ? `${item.experience} Years`  : 'Fresher'} </span>`;
+    
+    var companyInfo = document.createElement("div");
+    companyInfo.innerHTML = item.company_name;
+    var applyLink = document.createElement("a");
+    applyLink.setAttribute("href", `../jobDescription.html?value=${item.id}`);
+    applyLink.textContent = "Apply";
+    rightDiv.appendChild(h3);
+    rightDiv.appendChild(companyInfo);
+    rightDiv.appendChild(applyLink);
+
+    div.appendChild(leftDiv);
+    div.appendChild(rightDiv);
+
+    return div;
+  }
+    
+      // Fetch data and create list items based on the response
+      fetch('https://script.google.com/macros/s/AKfycbz-ndxgLazkB2ilzt9Ae02w5CR-JeW92LyOTbIOOFgYYsLOEQQSmgHkFw5BOHQetTcy/exec', {
+        method: "GET",
+      })
+      .then(res => res.json())  
+      .then(data => {
+
+        console.log(data)
+        
+    
+        // Create list items based on the fetched data
+        
+        var container = document.querySelector('.master-process-center');  // Assuming you have a container to hold the list items
+        var newArray = data.slice(-4).reverse();
+        newArray.forEach(function(item, i) {
+          var listItem = createListItem(item, i);
+          container.appendChild(listItem);
+        });
+      })
+      .catch(error => console.error('Error fetching data:', error));
+    </script>
+
+
     <script type="text/javascript">
       !(function (o, c) {
         var n = c.documentElement,
@@ -412,54 +451,8 @@
           <h2 class="no-margins">Latest Job</h2>
         </div>
         <div class="master-process-center">
-          <div class="single-process-center">
-            <div class="left-process-center">
-              <div class="text-number-process-center">1</div>
-            </div>
-            <div class="right-process-center">
-              <h3 class="no-margins">Business Analyst II  <span class="pd-custom">4 - 6 yrs</span></h3>
-              <div>
-                Company Name - JD 
-              </div>
-              <a href="../contact/contact-b.html" >Apply</a>
-            </div>
-          </div>
-          <div class="single-process-center">
-            <div class="left-process-center">
-              <div class="text-number-process-center">2</div>
-            </div>
-            <div class="right-process-center">
-              <h3 class="no-margins">Front-end Developer <span class="pd-custom">2 - 3 yrs</span></h3>
-              <div>
-                Company Name - JD 
-              </div>
-              <a href="../contact/contact-b.html" >Apply</a>
-            </div>
-          </div>
-          <div class="single-process-center">
-            <div class="left-process-center">
-              <div class="text-number-process-center">3</div>
-            </div>
-            <div class="right-process-center">
-              <h3 class="no-margins">Software Developer <span class="pd-custom">4 - 7 yrs</span></h3>
-              <div>
-                Company Name - JD 
-              </div>
-              <a href="../contact/contact-b.html" >Apply</a>
-            </div>
-          </div>
-          <div class="single-process-center">
-            <div class="left-process-center">
-              <div class="text-number-process-center">4</div>
-            </div>
-            <div class="right-process-center">
-              <h3 class="no-margins">UX Designer <span class="pd-custom">Fresher</span></h3>
-              <div>
-                Company Name - JD 
-              </div>
-              <a href="../contact/contact-b.html" >Apply</a>
-            </div>
-          </div>
+          
+          
         </div>
         <div
           data-w-id="9981e4cd-3183-cb3e-645d-c9ad471a1457"
