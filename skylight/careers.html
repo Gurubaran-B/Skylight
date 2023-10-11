@@ -76,13 +76,18 @@
       })
       .then(res => res.json())  
       .then(data => {
+        console.log(data)
         
     
         // Create list items based on the fetched data
         var container = document.querySelector('.w-dyn-items');  // Assuming you have a container to hold the list items
         data.reverse().forEach(function(item) {
-          var listItem = createListItem(item);
-          container.appendChild(listItem);
+          if(item.online)
+          {
+            var listItem = createListItem(item);
+            container.appendChild(listItem);
+          }
+          
         });
       })
       .catch(error => console.error('Error fetching data:', error));

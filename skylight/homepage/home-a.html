@@ -61,15 +61,18 @@
       .then(data => {
 
         console.log(data)
-        
-    
-        // Create list items based on the fetched data
-        
+                
         var container = document.querySelector('.master-process-center');  // Assuming you have a container to hold the list items
-        var newArray = data.slice(-4).reverse();
+        var newArray = data.filter((item) => item.online).slice(-4).reverse();
         newArray.forEach(function(item, i) {
-          var listItem = createListItem(item, i);
-          container.appendChild(listItem);
+
+          if(item.online)
+          {
+            var listItem = createListItem(item, i);
+            container.appendChild(listItem);
+
+          }
+          
         });
       })
       .catch(error => console.error('Error fetching data:', error));
